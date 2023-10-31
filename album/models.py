@@ -25,8 +25,15 @@ class Player(models.Model):
     weight = models.IntegerField()
     comment = models.CharField(max_length=200, blank=True)
     
+class Estadios(models.Model):
+    """ Estadio """
+    selection = models.ForeignKey('Estadios', on_delete=models.PROTECT,related_name='get_estadios' )
+    name = models.CharField(max_length=50)
+    location = models.CharField(max_length=50)
+    photo = models.ImageField(upload_to='estadios/')
+    
     def __str__(self):
-        return self.first_name + " " + self.last_name
+        return self.name + " " + self.location
 
     def get_absolute_url(self):
-        return reverse('player-list')
+        return reverse('estadios-list')

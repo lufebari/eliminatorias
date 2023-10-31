@@ -30,5 +30,9 @@ urlpatterns = [
     path('player/<int:pk>/update/',views.PlayerUpdate.as_view(),name='player-update'), 
     path('player/create/', views.PlayerCreate.as_view(), name='player-create'),
     path('player/<int:pk>/delete/', views.PlayerDelete.as_view(), name='player-delete'),
+    
+    path('estadio/', views.SelectionListView.as_view(), name='estadio-list'),
+    path('estadio/<int:pk>/detail/',
+    views.SelectionDetailView.as_view(), name='estadio-detail'),
 
 ]

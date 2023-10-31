@@ -26,3 +26,9 @@ class PlayerCreate(CreateView):
 class PlayerDelete(DeleteView):
     model = Player
     success_url = reverse_lazy('player-list')
+    
+class Estadios_detailView(DetailView):
+    model = Selection
+
+class EstadiosListView(ListView):
+    model = Selection
